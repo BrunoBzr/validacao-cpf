@@ -3,7 +3,7 @@
 void main(){
 	int cpf[11], i;
 	
-	#informando o cpf
+	/*informando o cpf*/
 	for(i = 0; i < 11; i++){
 		int d;
 		printf("Informe o %d digito: ", i+1);
@@ -11,7 +11,7 @@ void main(){
 		cpf[i] = d;
 	}
 	
-	#imprimindo o cpf
+	/*imprimindo o cpf*/
 	for(i = 0; i < 11; i++){
 		printf("%d", cpf[i]);
 	}
