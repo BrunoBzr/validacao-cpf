@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 void main(){
-	int cpf[11], i, primeiro_digito, segundo_digito;
+	int cpf[11], i;
 	int soma = 0, mult = 10, resto_divisao = 0;
+	int pd = cpf[9], sd = cpf[10];
 	/*informando o cpf*/
 	for(i=0; i<11; i++){
 		int d;
@@ -18,16 +19,32 @@ void main(){
 		mult--;
 	}
 	resto_divisao = soma%11;
-		if(resto_divisao < 2){
-			primeiro_digito = 0;
-		}else{
-			primeiro_digito = 11 - resto_divisao;
-		}
+	if(resto_divisao < 2){
+		cpf[9] = 0;
 		
-	printf("Primeiro digito: %d\n", primeiro_digito);
+	}else{
+		cpf[9] = 11 - resto_divisao;
+	}
+	printf("soma antes segundo digito: %d\n", soma);
+	mult = 11, soma = 0;
+	/*Verificando o segundo digito*/
+	for(i=0; i<10; i++){
+		
+		soma += cpf[i] * mult;
+		mult--;
+	}
 	
-	/*imprimindo o cpf*/
-	for(i = 0; i < 11; i++){
+	printf("soma segundo digito: %d\n", soma);
+	
+	resto_divisao = soma%11;
+	if(resto_divisao < 2){
+		cpf[10] = 0;
+	}else{
+		cpf[10] = 11 - resto_divisao;
+	}
+	
+	for(i=0; i<11;i++){
 		printf("%d", cpf[i]);
 	}
+	
 }
