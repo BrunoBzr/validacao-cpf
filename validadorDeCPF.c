@@ -46,13 +46,13 @@ void main(){
 	}
 	
 	if(pd == cpf[9] && sd == cpf[10]){
-		printf("CPF informado: ");
+		printf("\nCPF informado: ");
 		for(i=0; i<11;i++){
 			printf("%d", cpf[i]);
 		}
 		printf("\nCPF valido!");
 	}else{
-		printf("CPF informado: ");
+		printf("\nCPF informado: ");
 		for(i=0; i<9;i++){
 			printf("%d", cpf[i]);
 		}
